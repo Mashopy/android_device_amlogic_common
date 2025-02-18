@@ -50,7 +50,7 @@ TARGET_SCREEN_DENSITY ?= 240
 endif
 
 ## HIDL
-DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
     $(PLATFORM_PATH)/vendor_framework_compatibility_matrix.xml
 ifeq ($(TARGET_KERNEL_VERSION),5.4)
 DEVICE_MANIFEST_FILE += $(PLATFORM_PATH)/manifest_5.4.xml
@@ -66,7 +66,7 @@ ifeq ($(PRODUCT_IS_ATV),true)
 DEVICE_MANIFEST_FILE += $(PLATFORM_PATH)/manifest_tv.xml
 endif
 
-DEVICE_MATRIX_FILE := $(PLATFORM_PATH)/compatibility_matrix.xml
+DEVICE_MATRIX_FILE += $(PLATFORM_PATH)/compatibility_matrix.xml
 
 ## Kernel
 BOARD_CUSTOM_DTBIMG_MK := device/amlogic/common/mkdtbimg.mk
