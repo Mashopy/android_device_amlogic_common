@@ -106,9 +106,11 @@ PRODUCT_COPY_FILES +=  \
     $(LOCAL_PATH)/init-files/ueventd.rc:$(TARGET_COPY_OUT_VENDOR)/etc/ueventd.rc
 
 ## Keymaster
+ifneq ($(TARGET_AMLOGIC_SOC),gxl)
 ifeq ($(TARGET_HAS_TEE),false)
 PRODUCT_PACKAGES += \
     android.hardware.keymaster@4.1-service
+endif
 endif
 
 ## Logo
